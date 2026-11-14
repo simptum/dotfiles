@@ -3,6 +3,7 @@
 	name = simptum
 [core]
         editor = nvim
+	pager = less -FRX
 [diff]
         tool = nvimdiff
 [difftool]
