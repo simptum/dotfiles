@@ -1,0 +1,6 @@
+# fedora pc
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINyMtSrYbNsC0RgzX+onV8potZ2exgJ9B1Yi+aVlHdm5 simptum@fedora
+# windows pc
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEf8zgo/D+n2s52IQtCfCJUVzTt/qQJun3NKSF3VHynb josiah martinez@simptum
+# work laptop
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDLpzIuDOk04KYlBbmkWrXnPlg7L2oi1G02A96Jvm2uC jmartz@Josiahs-Air

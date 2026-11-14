@@ -1,0 +1,9 @@
+[user]
+	email = josiahmartinez@simptum.net
+	name = simptum
+[core]
+        editor = nvim
+[diff]
+        tool = nvimdiff
+[difftool]
+        prompt = false
