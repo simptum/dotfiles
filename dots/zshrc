@@ -24,7 +24,7 @@ alias gl='git log'
 alias cdg='cd $(git rev-parse --show-toplevel)'
 autoload -Uz compinit && compinit
 
-alias screen="bash /home/simptum/xrandr.sh"
+alias screen="bash $HOME/xrandr.sh"
 alias guac="xrandr -s 1920x1200"
 alias vim="nvim"
 alias k='kubectl'
@@ -93,14 +93,14 @@ lock() {
     bw lock
 }
 
-PATH=$PATH:/home/simptum/.local/bin
+PATH=$PATH:$HOME/.local/bin
 
 source <(kubectl completion zsh)
 
 eval "$(starship init zsh)"
 
 # pnpm
-export PNPM_HOME="/home/simptum/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME/bin:"*) ;;
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
