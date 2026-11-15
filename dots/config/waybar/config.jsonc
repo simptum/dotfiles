@@ -1,0 +1,137 @@
+{
+    "layer": "top",
+    "output": "DP-2",
+    "position": "top",
+    "height": 42,
+    "margin": "5 10 5 10",
+    "spacing": 0,
+    "mode": "dock",
+    "exclusive": false,
+    "reload_style_on_change": true,
+    "modules-left": ["custom/app_launcher", "hyprland/workspaces"],
+    "modules-right": ["group/utils", "clock", "group/power"],
+    "custom/app_launcher": {
+        "rotate": 0,
+        "on-click": "wofi -iS drun",
+        "format": "{icon}",
+        "format-icons": {"default": ""},
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "separate-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "active": "    ",
+            "default": "    "
+        },
+        "all-outputs": false,
+        "ignore-workspaces": ["^(1[1-9]|\\d{2,})$"],
+        "persistent-workspaces": {"*": +2 }
+    },
+    "group/hiddentray": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false
+        },
+        "modules": ["custom/hiddentray", "tray"]
+    },
+    "custom/hiddentray": {
+        "rotate": 0,
+        "format": "{icon} ",
+        "format-icons": {"default": ""},
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "group/utils": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/hiddentray",
+            "group/network",
+            "group/audio"
+        ]
+    },
+    "group/audio": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": ["pulseaudio", "pulseaudio/slider"]
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": " 0%",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "tooltip": true,
+        "tooltip-format": "{volume}%",
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "group/network": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": ["network", "network#speed"]
+    },
+    "network": {
+        "format": "{icon}",
+        "format-icons": {
+            "ethernet": ["󰈀"]
+        },
+        "format-ethernet": "󰈀",
+        "tooltip-format": "{ipaddr}",
+        "on-click": "pkexec $HOME/.config/hypr/scripts/changeip.sh",
+        "tooltip": true
+    },
+    "network#speed": {
+        "format": "{bandwidthDownBits}",
+        "interval": 5,
+            "tooltip": false
+    },
+    "clock": {
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        // "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%I:%M}",
+		"on-click": "morgen"
+    },
+    "group/power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true
+        },
+        "modules": ["custom/power", "custom/restart", "custom/logout","custom/lock" ]
+    },
+	"custom/power": {
+		"format": " ",
+        "tooltip": false,
+		"on-click": "exec shutdown now"
+	},
+	"custom/lock": {
+		"format": " ",
+        "tooltip": false,
+		"on-click": "exec $HOME/.config/hypr/scripts/lock.sh"
+	},
+	"custom/logout": {
+		"format": "󰍃 ",
+        "tooltip": false,
+		"on-click": "exec hyprctl dispatch exit"
+	},
+	"custom/restart": {
+		"format": " ",
+        "tooltip": false,
+		"on-click": "exec shutdown -r now"
+	}
+}

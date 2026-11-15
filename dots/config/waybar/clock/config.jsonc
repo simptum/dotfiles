@@ -1,0 +1,17 @@
+{
+    "layer": "bottom",
+    "output": "DP-1",
+    "position": "top",
+    "height": 100,
+    "margin": "-10 0 -1000 0",
+    "spacing": 0,
+    "mode": "dock",
+    "exclusive": false,
+    "reload_style_on_change": true,
+    "modules-right": ["clock"],
+    "clock": {
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format": "{:%I:%M%p}",
+		"on-click": "morgen"
+    }
+}
